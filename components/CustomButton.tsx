@@ -1,8 +1,13 @@
-'use client';
 // components/CustomButton.tsx"
+'use client';
 import React from 'react';
+import { CustomButtonProps } from '@/types';
 
-const CustomButton = () => {
+const CustomButton = ({
+  title,
+  containerStyles,
+  handleClick,
+}: CustomButtonProps) => {
   return (
     <button
       disabled={false}
