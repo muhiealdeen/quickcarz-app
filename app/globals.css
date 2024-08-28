@@ -34,6 +34,14 @@
 
 .custom-btn {
   @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
+  background-color: #e76c6c; /* Default green background color */
+  color: white; /* Default text color */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+.custom-btn:hover {
+  background-color: #e70d0d; /* Darker green on hover */
 }
 /* END: General styles */
 
@@ -59,7 +67,7 @@
 }
 
 .hero__image-overlay {
-  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-gray-50 bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
 }
 /* END: Hero styles */
 

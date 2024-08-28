@@ -12,10 +12,10 @@ const CustomButton = ({
     <button
       disabled={false}
       type={'button'}
-      className={`custom-btn`}
-      onClick={() => {}}
+      className={`custom-btn custom-btn:hover ${containerStyles}`}
+      onClick={handleClick}
     >
-      <span className="flex-1">title</span>
+      <span className="flex-1">{title}</span>
     </button>
   );
 };
