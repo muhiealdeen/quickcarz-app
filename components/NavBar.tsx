@@ -6,7 +6,7 @@ import CustomButton from './CustomButton';
 const Navbar = () => {
   return (
     <header className="w-full absolute z-10">
-      <nav className="max-w-[1440px] mx-auto flex justify-between p-1 bg-slate-100">
+      <nav className="max-w-[1440px] mx-auto flex justify-between p-1 bg-slate-100 shadow-md border-b-2">
         <Link href="/" className="flex justify-center items-center">
           <span className="text-2xl font-bold p-2">QuikCarz </span>
           <Image
