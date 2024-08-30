@@ -17,15 +17,21 @@ const Navbar = () => {
             className="object-contain"
           />
         </Link>
-        <div className="flex items-center">
-          <h2>Home</h2>
-          <h2>Contuct us</h2>
-          <h2>About us</h2>
+        <div className="flex items-center gap-5 ">
+          <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
+            Home
+          </h2>
+          <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
+            Contuct us
+          </h2>
+          <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
+            About us
+          </h2>
         </div>
         <CustomButton
           title="Sign in"
           btnType="button"
-          containerStyles="text-primary-blue rounded-full bg-white min-w-[80px] p-2"
+          containerStyles="text-primary-blue rounded-full bg-white min-w-[80px]"
         />
       </nav>
     </header>
