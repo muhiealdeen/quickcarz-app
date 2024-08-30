@@ -33,15 +33,10 @@
 }
 
 .custom-btn {
-  @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
-  background-color: #e76c6c; /* Default green background color */
-  color: white; /* Default text color */
-  border: none; /* Remove default border */
-  cursor: pointer; /* Show pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth transition */
+  @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none bg-red-400 text-white border-none cursor-pointer transition-colors duration-300;
 }
 .custom-btn:hover {
-  background-color: #e70d0d; /* Darker green on hover */
+  @apply hover:bg-red-600 /* Darker red on hover */;
 }
 /* END: General styles */
 
