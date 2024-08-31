@@ -29,9 +29,9 @@ const Navbar = () => {
           </h2>
         </div>
         <CustomButton
-          title="Sign in"
+          title="Sign In"
           btnType="button"
-          containerStyles="text-primary-blue rounded-full bg-white min-w-[80px]"
+          containerStyles="rounded-full m-2 "
         />
       </nav>
     </header>
