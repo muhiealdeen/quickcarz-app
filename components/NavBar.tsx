@@ -1,54 +1,13 @@
-// // components/Navbar.tsx
-// import Link from 'next/link';
-// import Image from 'next/image';
-
-// import CustomButton from './CustomButton';
-
-// const Navbar = () => {
-//   return (
-//     <header className="w-full absolute z-10">
-//       <nav className="max-w-[1440px] mx-auto flex justify-between p-1 bg-slate-100 shadow-md border-b-2">
-//         <Link href="/" className="flex justify-center items-center ">
-//           <span className="text-2xl font-bold p-2">QuikCarz </span>
-//           <Image
-//             src="/logo2.png"
-//             alt="logo"
-//             width={60}
-//             height={60}
-//             className="object-contain rounded-3xl "
-//           />
-//         </Link>
-//         <div className="flex items-center gap-5 ">
-//           <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
-//             Home
-//           </h2>
-//           <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
-//             Contuct us
-//           </h2>
-//           <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
-//             About us
-//           </h2>
-//         </div>
-//         <CustomButton
-//           title="Sign In"
-//           btnType="button"
-//           containerStyles="rounded-full m-2 "
-//         />
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Navbar;
 // components/Navbar.tsx
+
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import CustomButton from './CustomButton';
-import useScreenSize from '@/app/hooks/useScreenSize'; // Import the hook correctly
+import useScreenSize from '@/app/hooks/useScreenSize';
 
 const Navbar = () => {
-  const isSmallScreen = useScreenSize(); // Call the hook
+  const isSmallScreen = useScreenSize();
   console.log('useScreenSize:', useScreenSize);
 
   if (isSmallScreen) {
@@ -62,9 +21,9 @@ const Navbar = () => {
               <Image
                 src="/logo2.png"
                 alt="logo"
-                width={80}
-                height={60}
-                className="object-contain"
+                width={60}
+                height={30}
+                className="object-contain rounded-3xl "
               />
             </Link>
             <CustomButton
@@ -117,7 +76,7 @@ const Navbar = () => {
           <CustomButton
             title="Sign In"
             btnType="button"
-            containerStyles="rounded-full m-2"
+            containerStyles="rounded-full m-2 "
           />
         </nav>
       </header>
