@@ -6,7 +6,7 @@ import CustomButton from './CustomButton';
 const Hero = () => {
   const handleScroll = () => {};
   return (
-    <div className="hero">
+    <div className=" hero ">
       <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title">Your Ride, Your Way — Fast and Simple!</h1>
         <p className="hero__subtitle">

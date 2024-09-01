@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import CustomButton from './CustomButton';
-import useScreenSize from '@/app/hooks/useScreenSize';
+import useScreenSize from '../app/hooks/useScreenSize';
 
 const Navbar = () => {
   const isSmallScreen = useScreenSize();
@@ -13,7 +13,7 @@ const Navbar = () => {
   if (isSmallScreen) {
     return (
       <header className="w-full absolute z-10">
-        <nav className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:justify-between p-1 bg-slate-100 shadow-md border-b-2">
+        <nav className=" flex flex-col md:flex-row md:justify-between p-1 bg-slate-100 shadow-md border-b-2">
           {/* Logo and Sign In Button */}
           <div className="flex justify-between items-center w-full md:w-auto px-7">
             <Link href="/" className="flex justify-center items-center">
@@ -51,7 +51,7 @@ const Navbar = () => {
   } else {
     return (
       <header className="w-full absolute z-10">
-        <nav className="max-w-[1440px] mx-auto flex justify-between p-1 bg-slate-100 shadow-md border-b-2">
+        <nav className=" flex justify-between p-1 bg-slate-100 shadow-md border-b-2">
           <Link href="/" className="flex justify-center items-center">
             <span className="text-2xl font-bold p-2">QuikCarz </span>
             <Image
