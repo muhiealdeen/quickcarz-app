@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { footerLinks } from '@/constants';
 
 const Footer = () => {
   return (
@@ -23,7 +24,24 @@ const Footer = () => {
             All right reserved &copy;
           </p>
         </div>
-        {/* <span className="text-muted">Place sticky footer content here.</span> */}
+        <div className="footer__links">
+          {footerLinks.map((link) => (
+            <div key={link.title} className="footer__link">
+              <h3 className="font-bold">{link.title}</h3>
+              <div className="flex flex-col gap-5">
+                {link.links.map((item) => (
+                  <Link
+                    key={item.title}
+                    href={item.url}
+                    className="hover:text-gray-400 cursor-pointer"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </footer>
   );
