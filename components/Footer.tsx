@@ -43,7 +43,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className=" flex justify-between item-center flex-wrap mt-10 border-t border-green-100 sm:px-16 px-6 py-10">
+      <div className="flex-1 w-full flex md:justify-end flex-wrap  justify-between item-center mt-10 border-t border-gray-300 sm:px-16 px-6 py-10">
         <p>@2024 QuikCarz. All rights reserved</p>
         <div className="footer__copyrights-link ">
           <Link href="/" className="hover:text-gray-400 cursor-pointer">
