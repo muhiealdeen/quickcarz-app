@@ -46,11 +46,11 @@ const Footer = () => {
       <div className=" flex justify-between item-center flex-wrap mt-10 border-t border-green-100 sm:px-16 px-6 py-10">
         <p>@2024 QuikCarz. All rights reserved</p>
         <div className="footer__copyrights-link ">
-          <Link href="/" className="text-gray-500">
+          <Link href="/" className="hover:text-gray-400 cursor-pointer">
             Privacy & Policy
           </Link>
 
-          <Link href="/" className="text-gray-500">
+          <Link href="/" className="hover:text-gray-400 cursor-pointer">
             Terms & Conditon
           </Link>
         </div>
