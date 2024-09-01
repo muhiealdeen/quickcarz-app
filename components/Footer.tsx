@@ -51,7 +51,7 @@ const Footer = () => {
           </Link>
 
           <Link href="/" className="hover:text-gray-400 cursor-pointer">
-            Terms & Conditon
+            Terms & Condition
           </Link>
         </div>
       </div>
