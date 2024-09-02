@@ -13,6 +13,9 @@ export default function Home() {
             Explore the cars available for rent. We have a wide range of cars
           </p>
         </div>
+        <div className="home__filters">
+          <div className="home__filtr-container"></div>
+        </div>
       </div>
     </main>
   );
