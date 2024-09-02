@@ -7,8 +7,8 @@ export default function Home() {
     <main className="overflow-hidden">
       <Hero />
       <div className="m-12 padding-x padding-y max-width " id="discover">
-        <div className="home__text-container">
-          <h1 className="">Available Cars</h1>
+        <div className="home__text-container -z-10">
+          <h1 className="text-4xl font-extrabold ">Available Cars</h1>
         </div>
       </div>
     </main>
