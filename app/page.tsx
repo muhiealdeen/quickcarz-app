@@ -1,5 +1,6 @@
 // app/page.tsx
-import { Hero } from '@/components';
+import { Hero, SearchBar, CustomFilter } from '@/components';
+
 import Image from 'next/image';
 
 export default function Home() {
@@ -12,6 +13,13 @@ export default function Home() {
           <p>
             Explore the cars available for rent. We have a wide range of cars
           </p>
+        </div>
+        <div className="home__filters">
+          <SearchBar />
+          <div className="home__filtr-container">
+            <CustomFilter title="fuel" />
+            <CustomFilter title="year" />
+          </div>
         </div>
       </div>
     </main>
