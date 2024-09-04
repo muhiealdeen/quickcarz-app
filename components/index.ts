@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 import Footer from './Footer';
 import CustomFilter from './CustomFilter';
 import SearchBar from './SearchBar';
-import SeachManufacturer from './SeachManufacturer';
+import SearchManufacturer from './SearchManufacturer';
 
 export {
   Hero,
@@ -14,5 +14,5 @@ export {
   Footer,
   CustomFilter,
   SearchBar,
-  SeachManufacturer,
+  SearchManufacturer,
 };
