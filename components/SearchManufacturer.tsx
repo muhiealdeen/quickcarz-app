@@ -1,15 +1,27 @@
+// components/SeachManufacturer.tsx
 'use client';
 import { Fragment, useState } from 'react';
 import Image from 'next/image';
 import { searchManufacturerProps } from '@/types';
 import { Combobox, Transition, ComboboxButton } from '@headlessui/react';
+import { manufacturers } from '@/constants';
 import React from 'react';
 
-const SeachManufacturer = ({
+const SearchManufacturer = ({
   manufacturer,
   setManufacturer,
 }: searchManufacturerProps) => {
   const [query, setQuery] = useState('');
+
+  const filteredManufacturers =
+    query === ''
+      ? manufacturers
+      : manufacturers.filter((manufacturer) =>
+          manufacturer
+            .toLowerCase()
+            .replace(/\s+/g, '')
+            .includes(query.toLowerCase().replace(/\s+/g, '')),
+        );
   return (
     <div className="search-manufacturer">
       <Combobox>
@@ -38,21 +50,27 @@ const SeachManufacturer = ({
           afterLeave={() => setQuery('')}
         >
           <Combobox.Options>
-            <Combobox.Option value="VolkesWagen" />
-            <Combobox.Option value="Toyota" />
-            <Combobox.Option value="Mercedes" />
-            <Combobox.Option value="BMW" />
+            {filteredManufacturers.length === 0 && query !== '' ? (
+              <Combobox.Option
+                value={query}
+                className="search-manufacturer__option"
+              >
+                Create "{query}"
+              </Combobox.Option>
+            ) : (
+              filteredManufacturers.map((manufacturer) => (
+                <Combobox.Option
+                  key={manufacturer}
+                  value={manufacturer}
+                  // className={}
+                ></Combobox.Option>
+              ))
+            )}
           </Combobox.Options>
         </Transition>
       </Combobox>
-      {/* <input
-        type="text"
-        value={manufacturer}
-        onChange={(e) => setManufacturer(e.target.value)}
-        placeholder="Search Manufacturer"
-      /> */}
     </div>
   );
 };
 
-export default SeachManufacturer;
+export default SearchManufacturer;
