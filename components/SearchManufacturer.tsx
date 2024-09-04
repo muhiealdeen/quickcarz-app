@@ -50,28 +50,33 @@ const SearchManufacturer = ({
           afterLeave={() => setQuery('')}
         >
           <Combobox.Options>
-            {filteredManufacturers.length === 0 && query !== '' ? (
-              <Combobox.Option
-                value={query}
-                className="search-manufacturer__option"
-              >
-                Create "{query}"
-              </Combobox.Option>
-            ) : (
-              filteredManufacturers.map((manufacturer) => (
-                <Combobox.Option
-                  key={manufacturer}
-                  className={({ active }) =>
-                    `relative search-manufacturer__option ${
-                      active ? `bg-primary-blue text-white` : `text-gray-900`
-                    }`
-                  }
-                  value={manufacturer}
-                >
-                  {manufacturer}
-                </Combobox.Option>
-              ))
-            )}
+            {
+              // filteredManufacturers.length === 0 && query !== '' ? (
+              //   <Combobox.Option
+              //     value={query}
+              //     className="search-manufacturer__option"
+              //   >
+              //     Sorry, we couldn't find any cars for:{' '}
+              //     <span className="font-bold">"{query}"</span>
+              //   </Combobox.Option>
+              // ) : (
+              filteredManufacturers.map(
+                (manufacturer) => (
+                  <Combobox.Option
+                    key={manufacturer}
+                    className={({ active }) =>
+                      `relative search-manufacturer__option ${
+                        active ? `bg-primary-blue text-white` : `text-gray-900`
+                      }`
+                    }
+                    value={manufacturer}
+                  >
+                    {manufacturer}
+                  </Combobox.Option>
+                ),
+                // )
+              )
+            }
           </Combobox.Options>
         </Transition>
       </Combobox>
