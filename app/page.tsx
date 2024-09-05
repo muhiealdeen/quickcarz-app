@@ -1,5 +1,5 @@
 // app/page.tsx
-import { Hero, SearchBar, CustomFilter } from '@/components';
+import { Hero, SearchBar, CustomFilter, CarCard } from '@/components';
 import { getCars } from '@/utils';
 import { log } from 'console';
 
@@ -7,7 +7,8 @@ import Image from 'next/image';
 
 export default async function Home() {
   const cars = await getCars();
-  console.log('cars:', cars);
+  // console.log('cars:', cars);
+  const isDataEmpty = !cars || cars.length < 1 || !Array.isArray(cars);
 
   return (
     <main className="overflow-hidden">
@@ -26,6 +27,22 @@ export default async function Home() {
             <CustomFilter title="year" />
           </div>
         </div>
+        {!isDataEmpty ? (
+          <section>
+            <div className="home__cars-wrapper">
+              {cars.map((car) => (
+                <CarCard car={car} />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div className="home__error-container">
+            <h2 className="text-black text-xl font-bold">
+              Oops, no cars available
+              <p>{cars?.message}</p>
+            </h2>
+          </div>
+        )}
       </div>
     </main>
   );

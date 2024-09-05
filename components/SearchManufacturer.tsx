@@ -2,7 +2,7 @@
 'use client';
 import { Fragment, useState } from 'react';
 import Image from 'next/image';
-import { searchManufacturerProps } from '@/types';
+import { SearchManufacturerProps } from '@/types';
 import { Combobox, Transition, ComboboxButton } from '@headlessui/react';
 import { manufacturers } from '@/constants';
 import React from 'react';
@@ -10,7 +10,7 @@ import React from 'react';
 const SearchManufacturer = ({
   manufacturer,
   setManufacturer,
-}: searchManufacturerProps) => {
+}: SearchManufacturerProps) => {
   const [query, setQuery] = useState('');
 
   const filteredManufacturers =
