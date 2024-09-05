@@ -8,7 +8,7 @@ import useScreenSize from '../app/hooks/useScreenSize';
 
 const Navbar = () => {
   const isSmallScreen = useScreenSize();
-  console.log('useScreenSize????:', useScreenSize);
+  // console.log('useScreenSize????:', useScreenSize);
 
   if (isSmallScreen) {
     return (

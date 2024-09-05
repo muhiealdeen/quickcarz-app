@@ -1,9 +1,14 @@
 // app/page.tsx
 import { Hero, SearchBar, CustomFilter } from '@/components';
+import { getCars } from '@/utils';
+import { log } from 'console';
 
 import Image from 'next/image';
 
-export default function Home() {
+export default async function Home() {
+  const cars = await getCars();
+  console.log('cars:', cars);
+
   return (
     <main className="overflow-hidden">
       <Hero />
