@@ -15,3 +15,24 @@ export async function getCars() {
     console.error(error);
   }
 }
+export const calculateCarRent = (city_mpg: number, year: number) => {
+  const baseRate = 40; // Lower base rate in dollars per day
+  const mileageMultiplier = 0.2; // Different factor for mileage impact
+  const depreciationRate = 0.03; // Lower additional rate per year of vehicle age
+  const luxuryFactor = 1.2; // Additional rate for newer cars (luxury models)
+
+  // Calculate the age of the car
+  const carAge = new Date().getFullYear() - year;
+
+  // Adjust the price based on mileage and age
+  const mileageCost = city_mpg * mileageMultiplier;
+  const ageCost = carAge * depreciationRate;
+
+  // Apply a luxury factor for newer cars (under 3 years old)
+  const luxuryAdjustment = carAge < 3 ? luxuryFactor : 1;
+
+  // Calculate final rental rate per day
+  const finalRate = (baseRate + mileageCost - ageCost) * luxuryAdjustment;
+
+  return finalRate.toFixed(2);
+};
