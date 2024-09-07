@@ -34,5 +34,8 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
   // Calculate final rental rate per day
   const finalRate = (baseRate + mileageCost - ageCost) * luxuryAdjustment;
 
-  return finalRate.toFixed(2);
+  // Round based on decimal part: < 0.50 = down to 0, >= 0.50 = up to 1
+  const roundedRate = Math.round(finalRate);
+
+  return roundedRate;
 };

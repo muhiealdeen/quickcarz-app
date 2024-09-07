@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
+import { calculateCarRent } from '@/utils';
 interface CarCardProps {
   car: CarProps;
 }
@@ -24,6 +25,7 @@ const CarCard = ({ car }: CarCardProps) => {
     transmission,
     year,
   } = car;
+  const carRent = calculateCarRent(city_mpg, year);
 
   return (
     <div className="car-card group">
@@ -33,7 +35,7 @@ const CarCard = ({ car }: CarCardProps) => {
         </h2>
       </div>
       <p>
-        <span>Car Rent...</span>
+        <span>{carRent}</span>
       </p>
     </div>
   );
