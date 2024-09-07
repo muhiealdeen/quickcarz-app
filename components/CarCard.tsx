@@ -6,6 +6,7 @@ import React from 'react';
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
 import { calculateCarRent } from '@/utils';
+import CarDetails from './CarDetails';
 interface CarCardProps {
   car: CarProps;
 }
@@ -81,13 +82,18 @@ const CarCard = ({ car }: CarCardProps) => {
           <CustomButton
             title="View Details"
             btnType="button"
-            containerStyles=" text-white py-2 rounded-full"
+            containerStyles="w-full bg-blue-500 text-white py-2 rounded-full"
             textStyles="text-white text-[14px] leading-[17px] font-bold"
             handleClick={() => setIsOpen(true)}
             rightIcon="/right-arrow.svg"
           />
         </div>
       </div>
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };
