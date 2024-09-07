@@ -25,6 +25,7 @@ const CarCard = ({ car }: CarCardProps) => {
     transmission,
     year,
   } = car;
+  const [isOpen, setIsOpen] = useState(false);
   const carRent = calculateCarRent(city_mpg, year);
 
   return (
@@ -55,8 +56,8 @@ const CarCard = ({ car }: CarCardProps) => {
         />
       </div>
       <div className="relativ flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-gray-800">
-          <div className=" flex flex-col justify-center items-center gap-2">
+        <div className="flex group-hover:invisible w-full justify-between text-grey">
+          <div className="flex flex-col justify-center items-center gap-2">
             <Image
               src="/steering-wheel.svg"
               width={20}
@@ -67,28 +68,24 @@ const CarCard = ({ car }: CarCardProps) => {
               {transmission === 'a' ? 'Automatic' : 'Manual'}
             </p>
           </div>
-          <div className=" flex flex-col justify-center items-center gap-2">
-            <Image
-              src="/steering-wheel.svg"
-              width={20}
-              height={20}
-              alt="steering wheel"
-            />
-            <p className="text-[14px] leading-[17px]">
-              {transmission === 'a' ? 'Automatic' : 'Manual'}
-            </p>
+          <div className="car-card__icon">
+            <Image src="/tire.svg" width={20} height={20} alt="seat" />
+            <p className="car-card__icon-text">{drive.toUpperCase()}</p>
           </div>
-          <div className=" flex flex-col justify-center items-center gap-2">
-            <Image
-              src="/steering-wheel.svg"
-              width={20}
-              height={20}
-              alt="steering wheel"
-            />
-            <p className="text-[14px] leading-[17px]">
-              {transmission === 'a' ? 'Automatic' : 'Manual'}
-            </p>
+          <div className="car-card__icon">
+            <Image src="/gas.svg" width={20} height={20} alt="seat" />
+            <p className="car-card__icon-text">{city_mpg} MPG</p>
           </div>
+        </div>
+        <div className="car-card__btn-container">
+          <CustomButton
+            title="View Details"
+            btnType="button"
+            containerStyles="w-full bg-blue-500 text-white py-2 rounded-lg"
+            textStyles="text-white text-[14px] leading-[17px] font-bold"
+            handleClick={() => setIsOpen(true)}
+            rightIcon="/right-arrow.svg"
+          />
         </div>
       </div>
     </div>
