@@ -60,3 +60,50 @@ export const createCarImage = (car: CarProps, angle?: string) => {
 
   return `${url}`;
 };
+
+// export const createCarImage1 = async (car: CarProps, angle?: string) => {
+//   const { make, model, year } = car;
+//   const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+//   const url = `https://carapi.app/api/v1/car-image?make=${make}&model=${model}&year=${year}`;
+
+//   try {
+//     const response = await fetch(url, {
+//       headers: {
+//         Authorization: `Bearer 6c11a7aa7a0ba3fea650fe4ecc8a99c1de2821ab`, // Authentication with API key
+//       },
+//     });
+//     const data = await response.json();
+
+//     if (data.success) {
+//       return data.image_url; // This would be the car image URL
+//     } else {
+//       throw new Error('Car image not found');
+//     }
+//   } catch (error) {
+//     console.error('Error fetching car image:', error);
+//     return null;
+//   }
+// };
+
+export const createCarImage1 = (car: CarProps, angle?: string) => {
+  const { make, model, year } = car;
+  const apiKey = '6c11a7aa7a0ba3fea650fe4ecc8a99c1de2821ab'; // Replace with your actual API key
+
+  // Construct the URL with query parameters
+  const url = new URL('https://carapi.app/api/v1/car-image');
+
+  url.searchParams.append(
+    'customer',
+    '6c11a7aa7a0ba3fea650fe4ecc8a99c1de2821ab' || '',
+  );
+  // customer=hrjavascript-mastery
+  url.searchParams.append('make', make);
+  url.searchParams.append('model', model);
+  url.searchParams.append('year', `${year}`);
+  if (angle) {
+    url.searchParams.append('angle', angle);
+  }
+
+  // Return the constructed URL
+  return `${url}`;
+};

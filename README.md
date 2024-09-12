@@ -82,7 +82,7 @@ The application will be accessible at [http://localhost:3000](http://localhost:3
 You can find a live demo of the CarHup App [here](https://car-hup.netlify.app/).
 
 <p align="center">
-  <img  src="./public/carhup.png">
+  <img  src="./public/car.png">
 </p>
 
 ## APIs Used
