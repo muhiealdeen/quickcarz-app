@@ -5,13 +5,15 @@ import Image from 'next/image';
 import React from 'react';
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, createCarImage } from '@/utils';
 import CarDetails from './CarDetails';
+import { log } from 'console';
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
+  console.log('car????????????:', car);
   const {
     city_mpg,
     class: carClass,
@@ -28,6 +30,7 @@ const CarCard = ({ car }: CarCardProps) => {
   } = car;
   const [isOpen, setIsOpen] = useState(false);
   const carRent = calculateCarRent(city_mpg, year);
+  console.log(createCarImage(car), 'createCarImage');
 
   return (
     <div className="car-card group">
@@ -47,9 +50,7 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
       <div className=" relative w-full h-40 my-3 font-medium">
         <Image
-          src="/car.png"
-          // width={50}
-          // height={50}
+          src={createCarImage(car)}
           alt="car model"
           fill
           priority
