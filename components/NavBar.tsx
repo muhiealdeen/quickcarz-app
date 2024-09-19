@@ -63,15 +63,21 @@ const Navbar = () => {
             />
           </Link>
           <div className="flex items-center gap-5">
-            <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
-              Home
-            </h2>
-            <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
-              Contuct us
-            </h2>
-            <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
-              About us
-            </h2>
+            <Link href="/">
+              <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
+                Home
+              </h2>
+            </Link>
+            <Link href="/contact">
+              <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
+                Contuct us
+              </h2>
+            </Link>
+            <Link href="/about">
+              <h2 className="hover:bg-gray-400 px-3 cursor-pointer p-2 rounded-full hover:text-white">
+                About us
+              </h2>
+            </Link>
           </div>
           <CustomButton
             title="Sign In"
