@@ -13,7 +13,7 @@ interface CarCardProps {
 }
 
 const CarCard = ({ car }: CarCardProps) => {
-  console.log('car????????????:', car);
+  // console.log('car????????????:', car);
   const {
     city_mpg,
     class: carClass,
@@ -30,7 +30,7 @@ const CarCard = ({ car }: CarCardProps) => {
   } = car;
   const [isOpen, setIsOpen] = useState(false);
   const carRent = calculateCarRent(city_mpg, year);
-  console.log(createCarImage(car), 'createCarImage');
+  // console.log(createCarImage(car), 'createCarImage');
 
   return (
     <div className="car-card group">

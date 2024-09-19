@@ -56,7 +56,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       <Image
-                        src={createCarImage(car, 'angle')}
+                        src={createCarImage(car)}
                         // width={50}
                         // height={50}
                         alt="car model"
@@ -69,7 +69,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={createCarImage(car, 'angle')}
+                          src={createCarImage(car, '29')}
                           // width={50}
                           // height={50}
                           alt="car model"
@@ -80,7 +80,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={createCarImage(car, 'angle')}
+                          src={createCarImage(car, '33')}
                           // width={50}
                           // height={50}
                           alt="car model"
@@ -91,7 +91,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={createCarImage(car, 'angle')}
+                          src={createCarImage(car, '13')}
                           // width={50}
                           // height={50}
                           alt="car model"
