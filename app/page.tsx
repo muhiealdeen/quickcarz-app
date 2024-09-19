@@ -5,8 +5,14 @@ import { log } from 'console';
 
 import Image from 'next/image';
 
-export default async function Home() {
-  const cars = await getCars();
+export default async function Home({ searchParams }) {
+  const cars = await getCars({
+    manufacturer: searchParams.manufacturer || '',
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || '',
+    limit: searchParams.limit || 10,
+    model: searchParams.model || '',
+  });
   // console.log('cars:==========', cars);
   // console.log('Number of cars:', cars.length);
   const isDataEmpty = !cars || cars.length < 1 || !Array.isArray(cars);
