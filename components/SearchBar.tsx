@@ -1,3 +1,4 @@
+// components/searchBar
 'use client';
 import React from 'react';
 import { useState } from 'react';
@@ -51,7 +52,7 @@ const SearchBar = () => {
     const newPathname = `${
       window.location.pathname
     }?${searchParams.toString()}`; // /cars?model=toyota&manufacturer=toyota
-    router.push(newPathname);
+    router.push(newPathname, { scroll: false });
   };
 
   return (
