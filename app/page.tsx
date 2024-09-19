@@ -7,7 +7,8 @@ import Image from 'next/image';
 
 export default async function Home() {
   const cars = await getCars();
-  // console.log('cars:', cars);
+  // console.log('cars:==========', cars);
+  // console.log('Number of cars:', cars.length);
   const isDataEmpty = !cars || cars.length < 1 || !Array.isArray(cars);
 
   return (

@@ -8,7 +8,7 @@ export async function getCars() {
       'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com',
     };
     const response = await fetch(
-      'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera',
+      'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q7',
       { headers: headers },
     );
     const result = await response.json();
@@ -85,25 +85,26 @@ export const createCarImage = (car: CarProps, angle?: string) => {
 //   }
 // };
 
-export const createCarImage1 = (car: CarProps, angle?: string) => {
-  const { make, model, year } = car;
-  const apiKey = '6c11a7aa7a0ba3fea650fe4ecc8a99c1de2821ab'; // Replace with your actual API key
+// -------------------------------------------------------------------------------------------
+// export const createCarImage1 = (car: CarProps, angle?: string) => {
+//   const { make, model, year } = car;
+//   const apiKey = '6c11a7aa7a0ba3fea650fe4ecc8a99c1de2821ab'; // Replace with your actual API key
 
-  // Construct the URL with query parameters
-  const url = new URL('https://carapi.app/api/v1/car-image');
+//   // Construct the URL with query parameters
+//   const url = new URL('https://carapi.app/api/v1/car-image');
 
-  url.searchParams.append(
-    'customer',
-    '6c11a7aa7a0ba3fea650fe4ecc8a99c1de2821ab' || '',
-  );
-  // customer=hrjavascript-mastery
-  url.searchParams.append('make', make);
-  url.searchParams.append('model', model);
-  url.searchParams.append('year', `${year}`);
-  if (angle) {
-    url.searchParams.append('angle', angle);
-  }
+//   url.searchParams.append(
+//     'customer',
+//     '6c11a7aa7a0ba3fea650fe4ecc8a99c1de2821ab' || '',
+//   );
+//   // customer=hrjavascript-mastery
+//   url.searchParams.append('make', make);
+//   url.searchParams.append('model', model);
+//   url.searchParams.append('year', `${year}`);
+//   if (angle) {
+//     url.searchParams.append('angle', angle);
+//   }
 
-  // Return the constructed URL
-  return `${url}`;
-};
+//   // Return the constructed URL
+//   return `${url}`;
+// };
